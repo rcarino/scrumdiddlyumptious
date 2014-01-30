@@ -1,20 +1,28 @@
-<!-- TODO: Hardcode -->
+<!-- TODO: Hardcoded -->
+<!-- restaurant -->
 <h1>Cafe Chaat</h1>
 <ul>
     <h2>Tags</h2>
+    TODO: this is ugly as shit
     <li ng-repeat="tag in restaurant.cuisine">{{tag}}</li>
 </ul>
 
 <ul>
-    <li ng-repeat="category in restaurant.menu|limitTo:1">
+    <li ng-repeat="category in restaurant.menu">
         <h2>Category</h2>
         <ul>
             <li ng-repeat="dish in category.children">
-                {{dish}}
+                <h2>{{dish.name}} {{dish.price}}</h2>
+                <p>{{dish.descrip}}</p>
+                <p>TODO: checkbox and quantity</p>
             </li>
         </ul>
     </li>
 </ul>
+
+<h2>TODO: Total price & submit order is fake right now. Add link to modify current order</h2>
+<a href="/">Link to submit order forreals</a> <br>
+<a href="/">Link for friends to modify order</a>
 <!--<span>{{restaurant.menu}}</span>-->
 
 <!--
