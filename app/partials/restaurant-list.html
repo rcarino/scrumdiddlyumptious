@@ -1,31 +1,36 @@
-
-    <div>
-      <!--Sidebar content-->
-
-      Search: <input ng-model="query">
-      Sort by:
-      <select ng-model="orderProp">
+<div>
+    <!--Sidebar content-->
+    <h2>TODO: chaat is the only restaurant with menus so for. Sawwwwy</h2>
+    Search: <input ng-model="query">
+    Sort by:
+    <select ng-model="orderProp">
         <option value="na">Closest</option>
         <option value="latitude">Cheapest</option>
-      </select>
+    </select>
 
-    </div>
-      <!--Body content-->
+</div>
+<!--Body content-->
 
-      <ul>
-        <li ng-repeat="restaurant in restaurants | filter:query | orderBy:orderProp"
-            class="section group">
+<style>
+    .restaurant {
+        height: 100px;
+        margin: 5px 0px;
+    }
+
+    .restaurantThumb {
+        height: 100px;
+        width: 100px;
+    }
+</style>
+<ul>
+    <li ng-repeat="restaurant in restaurants | filter:query | orderBy:orderProp"
+        class="section group restaurant">
             <span class="col span_1_of_4">
-                <img ng-src="{{restaurant.img_url}}">
+                <img ng-src="{{restaurant.id|restaurant_thumb}}" class="restaurantThumb">
             </span>
             <span class="col span_3_of_4">
-                <a href="#/restaurants/{{restaurant.id}}">{{restaurant.na}} {{restaurant.addr}}</a>
+                <a href="{{restaurant.id|menu_url}}">{{restaurant.na}} {{restaurant.addr}}</a>
                 <p>Minimum order ${{restaurant.mino}}</p>
             </span>
-<!--          <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
-          <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
-          <p>{{phone.snippet}}</p>-->
-        </li>
-      </ul>
-
-        <!--<a href="#/about">about</a>-->
+    </li>
+</ul>
