@@ -1,3 +1,5 @@
+<a href="#/restaurants/">Back to restaurants</a>
+
 <!-- TODO: Hardcoded -->
 <!-- restaurant -->
 <h1>Cafe Chaat</h1>
@@ -7,18 +9,32 @@
     <li ng-repeat="tag in restaurant.cuisine">{{tag}}</li>
 </ul>
 
+<style>
+    .orderQuant {
+        width:34px;
+    }
+</style>
+
 <ul>
     <li ng-repeat="category in restaurant.menu">
         <h2>Category</h2>
         <ul>
             <li ng-repeat="dish in category.children">
                 <h2>{{dish.name}} {{dish.price}}</h2>
+
                 <p>{{dish.descrip}}</p>
-                <p>TODO: checkbox and quantity</p>
+                Quantity: <input type="number" class="orderQuant">
             </li>
         </ul>
     </li>
 </ul>
+
+<span>
+    Order Total: $63.48 <br>
+    Order: $52.99 <br>
+    Tax: $3.68 <br>
+    Tip: $8.95 <br>
+</span>
 
 <h2>TODO: Total price & submit order is fake right now. Add link to modify current order</h2>
 <a href="/">Link to submit order forreals</a> <br>
