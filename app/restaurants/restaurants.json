@@ -1,0 +1,40 @@
+[
+    {
+        "id": 32318,
+        "na": "Cafe Chaat",
+        "cs_phone": "415-979-9946",
+        "rds_info": {
+            "id": 186,
+            "name": "delivery.com",
+            "logo": ""
+        },
+        "services": {
+            "deliver": {
+                "time": 30,
+                "mino": 25,
+                "can": 1
+            }
+        },
+        "allow_tip": 1,
+        "allow_asap": 1,
+        "cu": [
+            "Indian",
+            "Kosher"
+        ],
+        "addr": "320 3rd St, San Francisco, CA",
+        "full_addr": {
+            "addr": "320 3rd St",
+            "addr2": "",
+            "city": "San Francisco",
+            "state": "CA",
+            "postal_code": "94107-1213"
+        },
+        "city": "San Francisco",
+        "latitude": 37.783357,
+        "longitude": -122.39861,
+        "del": 30,
+        "mino": 25,
+        "is_delivering": 1,
+        "img_url": "http://s3-media4.ak.yelpcdn.com/bphoto/ZDSYo2UFlNajA9RDA8gA4g/ms.jpg"
+    }
+]

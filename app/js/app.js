@@ -2,27 +2,30 @@
 
 /* App Module */
 
-var phonecatApp = angular.module('phonecatApp', [
+var scrumdiddlyumptiousApp = angular.module('scrumdiddlyumptiousApp', [
   'ngRoute',
-  'phonecatAnimations',
+  'scrumdiddlyumptiousAnimations',
 
-  'phonecatControllers',
-  'phonecatFilters',
-  'phonecatServices'
+  'scrumdiddlyumptiousControllers',
+  'scrumdiddlyumptiousFilters',
+  'scrumdiddlyumptiousServices'
 ]);
 
-phonecatApp.config(['$routeProvider',
+scrumdiddlyumptiousApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/phones', {
-        templateUrl: 'partials/phone-list.html',
-        controller: 'PhoneListCtrl'
+      when('/restaurants', {
+        templateUrl: 'partials/restaurant-list.html',
+        controller: 'RestaurantListCtrl'
       }).
-      when('/phones/:phoneId', {
-        templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
+      when('/restaurants/:restaurantId', {
+        templateUrl: 'partials/restaurant-menu.html',
+        controller: 'RestaurantMenuCtrl'
       }).
+        when('/about', {
+            templateUrl: 'partials/about.html'
+        }).
       otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/restaurants'
       });
   }]);

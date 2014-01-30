@@ -1,6 +1,6 @@
-var phonecatAnimations = angular.module('phonecatAnimations', ['ngAnimate']);
+var scrumdiddlyumptiousAnimations = angular.module('scrumdiddlyumptiousAnimations', ['ngAnimate']);
 
-phonecatAnimations.animation('.phone', function() {
+scrumdiddlyumptiousAnimations.animation('.phone', function() {
 
   var animateUp = function(element, className, done) {
     if(className != 'active') {

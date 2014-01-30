@@ -3,7 +3,7 @@
 ROOT_DIR=`dirname $0`/../..
 cd $ROOT_DIR
 
-SNAP_DIR=angular-phonecat-snapshots-web
+SNAP_DIR=angular-scrumdiddlyumptious-snapshots-web
 
 
 rm -rf $SNAP_DIR

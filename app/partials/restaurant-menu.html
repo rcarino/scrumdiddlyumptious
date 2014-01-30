@@ -1,3 +1,23 @@
+<!-- TODO: Hardcode -->
+<h1>Cafe Chaat</h1>
+<ul>
+    <h2>Tags</h2>
+    <li ng-repeat="tag in restaurant.cuisine">{{tag}}</li>
+</ul>
+
+<ul>
+    <li ng-repeat="category in restaurant.menu|limitTo:1">
+        <h2>Category</h2>
+        <ul>
+            <li ng-repeat="dish in category.children">
+                {{dish}}
+            </li>
+        </ul>
+    </li>
+</ul>
+<!--<span>{{restaurant.menu}}</span>-->
+
+<!--
 <div class="phone-images">
   <img ng-src="{{img}}"
        class="phone"
@@ -116,3 +136,4 @@
     <dd>{{phone.additionalFeatures}}</dd>
   </li>
 </ul>
+-->
