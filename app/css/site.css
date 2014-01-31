@@ -1,3 +1,70 @@
 .restaurant {
     height: 100px;
 }
+
+.menu-body h1 {
+    margin-bottom: 0px;
+}
+
+.restaurant-tags {
+    margin: 0;
+    padding-left: 0;
+}
+
+.restaurant-tags li {
+    display: inline-block;
+}
+
+.restaurant-tags li:after {
+    content: "/";
+    display: inline-block;
+    position: relative;
+    margin: 0 20px;
+}
+
+.restaurant-tags li:last-child:after {
+    display: none;
+}
+
+.dish .title {
+    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #474747;
+    margin-top: 10px;
+}
+
+.dish p {
+    clear: both;
+    margin: 20px 0;
+}
+
+.dish .orderQuant {
+    font-size: 18px;
+    padding: 5px;
+    margin-left: 20px;
+}
+
+
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both;
+}

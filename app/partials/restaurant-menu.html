@@ -1,33 +1,40 @@
 <a href="#/restaurants/">Back to restaurants</a>
 
-<!-- TODO: Hardcoded -->
-<!-- restaurant -->
+<div class="menu-body">
+
 <h1>Cafe Chaat</h1>
-<ul>
-    <h2>Tags</h2>
-    TODO: this is ugly as shit
+
+<ul class="restaurant-tags">
     <li ng-repeat="tag in restaurant.cuisine">{{tag}}</li>
 </ul>
 
-<style>
-    .orderQuant {
-        width:34px;
-    }
-</style>
+<div ng-repeat="category in restaurant.menu">
+    <h2>{{ category.name }}</h2>
+    <ul>
+        <li>
+            <ul>
+                <li class="dish" ng-repeat="dish in category.children">
+                    <span class="title">{{dish.name}}</span>
 
-<ul>
-    <li ng-repeat="category in restaurant.menu">
-        <h2>Category</h2>
-        <ul>
-            <li ng-repeat="dish in category.children">
-                <h2>{{dish.name}} {{dish.price}}</h2>
+                    <div class="pull-right">
+                        <span class="price">${{dish.price}}</span>
+                        <input class="orderQuant"
+                               type="number"
+                               inputmode="numeric"
+                               value="0"
+                               min="0"
+                               max="9"
+                               maxlength="1">
+                    </div>
 
-                <p>{{dish.descrip}}</p>
-                Quantity: <input type="number" class="orderQuant">
-            </li>
-        </ul>
-    </li>
-</ul>
+                    <p class="clearfix">{{dish.descrip}}</p>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+</div>
 
 <span>
     Order Total: $63.48 <br>
