@@ -26,7 +26,7 @@
     <li ng-repeat="restaurant in restaurants | filter:query | orderBy:orderProp"
         class="section group restaurant">
             <span class="col span_1_of_4">
-                <img ng-src="{{restaurant.id|restaurant_thumb}}" class="restaurantThumb">
+                <img ng-src="{{restaurant.img_url}}" class="restaurantThumb">
             </span>
             <span class="col span_3_of_4">
                 <a href="{{restaurant.id|menu_url}}">{{restaurant.na}} {{restaurant.addr}}</a>
