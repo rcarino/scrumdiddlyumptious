@@ -10,25 +10,26 @@
     <li ng-repeat="tag in restaurant.cuisine">{{tag}}</li>
 </ul>
 
-<style>
-    .orderQuant {
-        width:34px;
-    }
-</style>
+<div ng-repeat="category in restaurant.menu">
 
-<ul>
-    <li ng-repeat="category in restaurant.menu">
-        <h2>{{ category.name }}</h2>
-        <ul>
-            <li ng-repeat="dish in category.children">
-                <h2>{{dish.name}} {{dish.price}}</h2>
+    <h2>{{ category.name }}</h2>
 
-                <p>{{dish.descrip}}</p>
-                Quantity: <input type="number" class="orderQuant">
-            </li>
-        </ul>
-    </li>
-</ul>
+    <ul>
+        <li>
+            <ul>
+                <li class="dish" ng-repeat="dish in category.children">
+                    <div class="dish-title">
+                        <h3>{{dish.name}}</h3> <span class="dish-price">{{dish.price}}</span></h2>
+                    </div>
+
+                    <p>{{dish.descrip}}</p>
+                    Quantity: <input type="number" class="orderQuant">
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
 
 <span>
     Order Total: $63.48 <br>
