@@ -20,6 +20,10 @@ ul.restaurant-tags {
     display: none;
 }
 
+.dish {
+    padding: 10px;
+}
+
 .dish .title {
     font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
     font-size: 22px;
@@ -30,11 +34,15 @@ ul.restaurant-tags {
 
 .dish p {
     clear: both;
-    margin: 20px 0;
+    margin: 20px 0 0;
 }
 
 .dish .orderQuant {
     margin-left: 20px;
+}
+
+.dish:nth-child(odd) {
+    background-color: #F3F3F3;
 }
 
 .menu-body .totals {
