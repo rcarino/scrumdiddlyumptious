@@ -1,28 +1,34 @@
 .restaurant {
     height: 100px;
+    margin: 5px 0px;
+}
+
+.restaurantThumb {
+    height: 100px;
+    width: 100px;
 }
 
 .menu-body h1 {
     margin-bottom: 0px;
 }
 
-.restaurant-tags {
-    margin: 0 0 20px;
+ul.inline-list {
     padding-left: 0;
+    margin-bottom: 0;
 }
 
-.restaurant-tags li {
+ul.inline-list li {
     display: inline-block;
 }
 
-.restaurant-tags li:after {
+ul.inline-list li:after {
     content: "/";
     display: inline-block;
     position: relative;
     margin: 0 20px;
 }
 
-.restaurant-tags li:last-child:after {
+.inline-list li:last-child:after {
     display: none;
 }
 
@@ -40,9 +46,24 @@
 }
 
 .dish .orderQuant {
-    font-size: 18px;
-    padding: 5px;
     margin-left: 20px;
+}
+
+.menu-body .totals {
+    position: fixed;
+    display: block;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+
+    padding: 20px 50px;
+    font-size: 18px;
+    color: #F9F9F9;
+}
+
+.menu-body {
+    padding-bottom: 50px;
 }
 
 a[role='button'] {
@@ -68,18 +89,4 @@ a[role='button']:hover {
 
 .pull-left {
     float: left;
-}
-
-.clearfix {
-    *zoom: 1;
-}
-
-.clearfix:before,
-.clearfix:after {
-    display: table;
-    content: "";
-}
-
-.clearfix:after {
-    clear: both;
 }

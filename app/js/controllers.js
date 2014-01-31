@@ -4,6 +4,11 @@
 
 var scrumdiddlyumptiousControllers = angular.module('scrumdiddlyumptiousControllers', []);
 
+scrumdiddlyumptiousControllers.controller('FindRestaurantsCtrl', ['$scope',
+    function ($scope) {
+        $scope.query = '235 2nd St, San Francisco, CA 94105';
+    }]);
+
 scrumdiddlyumptiousControllers.controller('RestaurantListCtrl', ['$scope', 'Restaurant',
     function ($scope, Restaurant) {
         $scope.restaurants = Restaurant.query(function()
@@ -82,12 +87,12 @@ scrumdiddlyumptiousControllers.controller('RestaurantMenuCtrl', ['$scope', '$rou
         };
 
         $scope.calculateTax = function() {
-            taxTotal = (0.0925 * subtotal).toFixed(2);
+            taxTotal = (0.0875 * subtotal).toFixed(2);
             return taxTotal;
         };
 
         $scope.calculateTip = function() {
-            tipTotal = (0.175 * subtotal).toFixed(2);
+            tipTotal = (0.17 * subtotal).toFixed(2);
             return tipTotal;
         }
 

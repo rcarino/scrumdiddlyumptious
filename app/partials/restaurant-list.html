@@ -1,6 +1,5 @@
 <div>
     <!--Sidebar content-->
-    <h2>TODO: Only have this working for cafe chaat</h2>
     Find by name: <input ng-model="query">
     Sort by:
     <select ng-model="orderProp">
@@ -12,15 +11,6 @@
 <!--Body content-->
 
 <style>
-    .restaurant {
-        height: 100px;
-        margin: 5px 0px;
-    }
-
-    .restaurantThumb {
-        height: 100px;
-        width: 100px;
-    }
 </style>
 <ul>
     <li ng-repeat="restaurant in restaurants | filter:query | orderBy:orderProp"

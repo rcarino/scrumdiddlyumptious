@@ -2,9 +2,9 @@
 
 <div class="menu-body">
 
-<h1>{{restaurant.name}}</h1>
+<h1>{{restaurant.name}} Menu</h1>
 
-<ul class="restaurant-tags">
+<ul class="inline-list restaurant-tags">
     <li ng-repeat="tag in restaurant.cuisine">{{tag}}</li>
 </ul>
 
@@ -37,12 +37,14 @@
 </div>
 
 
-<span>
-    Subtotal: ${{calculateSubtotal()}} <br>
-    Tax: ${{calculateTax()}} <br>
-    Tip: ${{calculateTip()}} <br>
-    <b>Order: ${{calculateTotal()}}</b> <br>
-</span>
+<div class="totals">
+    <ul class="inline-list">
+        <li>Subtotal: ${{calculateSubtotal()}}</li>
+        <li>Tax (8.75%): ${{calculateTax()}}</li>
+        <li>Tip (17%): ${{calculateTip()}}</li>
+        <li><b>Order: ${{calculateTotal()}}</b></li>
+    </ul>
+</div>
 
 <a href="#/submit-order" ng-click="confirmOrder()" role="button">Submit order</a>
 

@@ -29,7 +29,8 @@ scrumdiddlyumptiousApp.config(['$routeProvider',
                 templateUrl: 'partials/cupcake.html'
             }).
             when('/find-restaurants', {
-                templateUrl: 'partials/find-restaurants.html'
+                templateUrl: 'partials/find-restaurants.html',
+                controller: 'FindRestaurantsCtrl'
             }).
             when('/submit-order', {
                 templateUrl: 'partials/submit-order.html'
