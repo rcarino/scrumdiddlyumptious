@@ -45,6 +45,9 @@ scrumdiddlyumptiousApp.config(['$routeProvider',
                 templateUrl: 'partials/charge.html',
                 controller: 'ChargeGroupCtrl'
             }).
+            when('/charge-success/:userId', {
+                templateUrl: 'partials/charge-success.html'
+            }).
             otherwise({
                 redirectTo: '/find-restaurants'
             });
