@@ -39,12 +39,12 @@
 
 <div class="totals">
     <ul class="inline-list">
-        <li>Subtotal: ${{calculateSubtotal()}}</li>
-        <li>Tax (8.75%): ${{calculateTax()}}</li>
-        <li>Tip (17%): ${{calculateTip()}}</li>
-        <li><b>Order: ${{calculateTotal()}}</b></li>
+        <li class="cost">Subtotal: ${{calculateSubtotal()}}</li>
+        <li class="cost">Tax (8.75%): ${{calculateTax()}}</li>
+        <li class="cost">Tip (17%): ${{calculateTip()}}</li>
+        <li class="cost"><b>Order: ${{calculateTotal()}}</b></li>
         <li><a href="#/submit-order" ng-click="confirmOrder()" role="button">Submit order</a></li>
-        <li><a href=javaScript:void(0);" ng-click="mergeOrders()" role="button">Update page</a></li>
+        <li><a href=javaScript:void(0);" ng-click="mergeOrders()" role="button">Update group order</a></li>
     </ul>
 </div>
 
