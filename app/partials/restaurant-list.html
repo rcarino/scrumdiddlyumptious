@@ -1,12 +1,16 @@
+<h1>Restaurants Near You</h1>
+
+<h2>Filters</h2>
 <div>
     <!--Sidebar content-->
-    Find by name: <input ng-model="query">
-    Sort by:
+    <span>Find by name:</span>
+    <input ng-model="query">
+
+    <span>Sort by:</span>
     <select ng-model="orderProp">
         <option value="na">Closest</option>
         <option value="latitude">Cheapest</option>
     </select>
-
 </div>
 <!--Body content-->
 
@@ -31,6 +35,9 @@
         position: relative;
     }
 </style>
+
+<h2>Results</h2>
+
 <ul>
     <li ng-repeat="restaurant in restaurants | filter:query | orderBy:orderProp"
         class="section group restaurant">
