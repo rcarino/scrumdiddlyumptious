@@ -12,24 +12,16 @@
     margin-bottom: 0px;
 }
 
-ul.inline-list {
-    padding-left: 0;
-    margin-bottom: 0;
-}
-
-ul.inline-list li {
-    display: inline-block;
-}
-
-ul.inline-list li:after {
-    content: "/";
-    display: inline-block;
-    position: relative;
-    margin: 0 20px;
+ul.restaurant-tags {
+    margin-bottom: 20px;
 }
 
 .inline-list li:last-child:after {
     display: none;
+}
+
+.dish {
+    padding: 10px;
 }
 
 .dish .title {
@@ -42,11 +34,15 @@ ul.inline-list li:after {
 
 .dish p {
     clear: both;
-    margin: 20px 0;
+    margin: 20px 0 0;
 }
 
 .dish .orderQuant {
     margin-left: 20px;
+}
+
+.dish:nth-child(odd) {
+    background-color: #F3F3F3;
 }
 
 .menu-body .totals {
