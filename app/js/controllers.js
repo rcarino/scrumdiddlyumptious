@@ -6,9 +6,16 @@ var scrumdiddlyumptiousControllers = angular.module('scrumdiddlyumptiousControll
 
 scrumdiddlyumptiousControllers.controller('RestaurantListCtrl', ['$scope', 'Restaurant',
     function ($scope, Restaurant) {
-        $scope.restaurants = Restaurant.query();
-/*        window.restaurants = $scope.restaurants;
-        for (var i = 0; i < $scope.restaurants.length; i++){
+        $scope.restaurants = Restaurant.query(function()
+        {
+            for (var i = 0; i < $scope.restaurants.length; i++){
+                var cur = $scope.restaurants[i];
+                cur.img_url = 32318 === cur.id ? 'http://s3-media4.ak.yelpcdn.com/bphoto/ZDSYo2UFlNajA9RDA8gA4g/ms.jpg' :
+                    'http://lorempixel.com/400/200/?' + Math.floor((Math.random()*10000)+1);
+            }
+        });
+        window.restaurants = $scope.restaurants;
+/*        for (var i = 0; i < $scope.restaurants.length; i++){
             var cur = $scope.restaurants[i];
             cur.img_url = 32318 === cur.img_url ? 'http://s3-media4.ak.yelpcdn.com/bphoto/ZDSYo2UFlNajA9RDA8gA4g/ms.jpg' :
                 'http://lorempixel.com/400/200/?' + Math.floor((Math.random()*10000)+1);
