@@ -3,8 +3,9 @@
 <!-- TODO: Hardcoded -->
 <!-- restaurant -->
 <h1>Cafe Chaat</h1>
+
+<h2>Tags</h2>
 <ul>
-    <h2>Tags</h2>
     TODO: this is ugly as shit
     <li ng-repeat="tag in restaurant.cuisine">{{tag}}</li>
 </ul>
@@ -17,7 +18,7 @@
 
 <ul>
     <li ng-repeat="category in restaurant.menu">
-        <h2>Category</h2>
+        <h2>{{ category.name }}</h2>
         <ul>
             <li ng-repeat="dish in category.children">
                 <h2>{{dish.name}} {{dish.price}}</h2>
