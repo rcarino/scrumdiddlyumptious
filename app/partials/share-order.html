@@ -1,37 +1,54 @@
 <h1>Submit your food items for this group order</h1>
 <p>The minimum amount is $25</p>
 
-<h2>Cafe Chaat</h2>
-<ul>
-    <h2>Tags</h2>
-    TODO: this is ugly as shit
-    <li ng-repeat="tag in restaurant.cuisine">{{tag}}</li>
-</ul>
+<a href="#/restaurants/">&lt; Back to restaurants</a>
 
-<style>
-    .orderQuant {
-        width:34px;
-    }
-</style>
+<div class="menu-body">
 
-<ul>
-    <li ng-repeat="category in restaurant.menu">
-        <h2>Category</h2>
+    <h1>{{restaurant.name}} Menu</h1>
+
+    <ul class="inline-list restaurant-tags">
+        <li ng-repeat="tag in restaurant.cuisine">{{tag}}</li>
+    </ul>
+
+    <div ng-repeat="category in restaurant.menu">
+        <h2>{{ category.name }}</h2>
         <ul>
-            <li ng-repeat="dish in category.children">
-                <h2>{{dish.name}} {{dish.price}}</h2>
+            <li>
+                <ul>
+                    <li class="dish" ng-repeat="dish in category.children">
+                        <span class="title">{{dish.name}}</span>
 
-                <p>{{dish.descrip}}</p>
-                Quantity: <input type="number" class="orderQuant">
+                        <div class="pull-right">
+                            <span class="price">${{dish.price}}</span>
+                            <input class="orderQuant"
+                                   ng-model="orderData[dish.id]"
+                                   ng-change="$emit('UpdateTotal')"
+                                   type="number"
+                                   inputmode="numeric"
+                                   value="0"
+                                   min="0"
+                                   max="9"
+                                   maxlength="1">
+                        </div>
+
+                        <p class="clearfix">{{dish.descrip}}</p>
+                    </li>
+                </ul>
             </li>
         </ul>
-    </li>
-</ul>
+    </div>
 
-<span>
-    Group Order Total: $63.48 <br>
-    Your order total: $15.48 <br>
-</span>
 
-Enter your venmo account to pay back coordinator<input type="text"> <br>
-<a href="#/submit-individual-order">Submit to group order</a>
+    <div class="totals">
+        <ul class="inline-list">
+            <li>Subtotal: ${{calculateSubtotal()}}</li>
+            <li>Tax (8.75%): ${{calculateTax()}}</li>
+            <li>Tip (17%): ${{calculateTip()}}</li>
+            <li><b>Order: ${{calculateTotal()}}</b></li>
+        </ul>
+    </div>
+
+    Enter your venmo account to pay back coordinator<input type="text"> <br>
+    <a href="#/submit-individual-order" role="button">Submit to group order</a>
+</div>
