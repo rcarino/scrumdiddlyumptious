@@ -17,3 +17,10 @@ scrumdiddlyumptiousServices.factory('Restaurant', ['$resource',
             query: {method:'GET', params:{restaurantId:'restaurants'}, isArray:true}
         });
     }]);
+
+scrumdiddlyumptiousServices.factory('Order', ['$resource',
+    function($resource){
+        return $resource('http://10.16.164.64:5000/confirm_order/', {}, {
+            query: {method:'GET'}
+        });
+    }]);

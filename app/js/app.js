@@ -31,6 +31,9 @@ scrumdiddlyumptiousApp.config(['$routeProvider',
             when('/find-restaurants', {
                 templateUrl: 'partials/find-restaurants.html'
             }).
+            when('/submit-order', {
+                templateUrl: 'partials/submit-order.html'
+            }).
             otherwise({
                 redirectTo: '/find-restaurants'
             });
