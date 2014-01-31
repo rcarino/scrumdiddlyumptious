@@ -100,6 +100,13 @@ scrumdiddlyumptiousControllers.controller('RestaurantMenuCtrl', ['$scope', '$rou
             total = (parseFloat(subtotal) + parseFloat(tipTotal) + parseFloat(taxTotal)).toFixed(2);
             return total;
         }
+
+        $scope.mergeOrders = function() {
+            var fries = $('.orderQuant').eq(0);
+            var val = fries.val();
+            fries.val(val + 2);
+            fries.trigger('input');
+        }
     }]);
 
 scrumdiddlyumptiousControllers.controller('ChargeGroupCtrl', ['$scope', '$routeParams', '$http',
