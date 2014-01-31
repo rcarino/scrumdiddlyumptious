@@ -12,20 +12,8 @@
     margin-bottom: 0px;
 }
 
-ul.inline-list {
-    padding-left: 0;
-    margin-bottom: 0;
-}
-
-ul.inline-list li {
-    display: inline-block;
-}
-
-ul.inline-list li:after {
-    content: "/";
-    display: inline-block;
-    position: relative;
-    margin: 0 20px;
+ul.restaurant-tags {
+    margin-bottom: 20px;
 }
 
 .inline-list li:last-child:after {
