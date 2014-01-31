@@ -104,18 +104,11 @@ scrumdiddlyumptiousControllers.controller('RestaurantMenuCtrl', ['$scope', '$rou
 
 scrumdiddlyumptiousControllers.controller('ChargeGroupCtrl', ['$scope', '$routeParams', '$http',
     function ($scope, $routeParams, $http) {
-/*        $scope.restaurant = Restaurant.get({restaurantId: $routeParams.restaurantId});
-
-        $scope.confirmOrder = function () {
-            $scope.order = Order.get();
-        }*/
-        /*$scope.qs = $location.search()*/
 
         $scope.chargeVenmo = function (){
             var response = $http({
                 method: 'GET',
                 url: 'http://10.16.164.64:5000/charge_venmo/' + location.search.split('=')[1]
             });
-            console.log(response);
         }
     }]);
