@@ -21,6 +21,16 @@
         height: 100px;
         width: 100px;
     }
+
+    .restaurantItem{
+        top: -81px;
+        position: relative;
+    }
+
+    .minOrder {
+        left: 105px;
+        position: relative;
+    }
 </style>
 <ul>
     <li ng-repeat="restaurant in restaurants | filter:query | orderBy:orderProp"
@@ -28,9 +38,9 @@
             <span class="col span_1_of_4">
                 <img ng-src="{{restaurant.img_url}}" class="restaurantThumb">
             </span>
-            <span class="col span_3_of_4">
+            <span class="col span_3_of_4 restaurantItem">
                 <a href="{{restaurant.id|menu_url}}">{{restaurant.na}} {{restaurant.addr}}</a>
-                <p>Minimum order ${{restaurant.mino}}</p>
+                 <p class="minOrder">Minimum order ${{restaurant.mino}}</p>
             </span>
     </li>
 </ul>
