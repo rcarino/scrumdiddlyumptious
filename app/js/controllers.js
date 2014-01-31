@@ -17,7 +17,7 @@ scrumdiddlyumptiousControllers.controller('RestaurantListCtrl', ['$scope', 'Rest
             for (var i = 0; i < $scope.restaurants.length; i++){
                 var cur = $scope.restaurants[i];
                 cur.img_url = 32318 === cur.id ? 'http://s3-media4.ak.yelpcdn.com/bphoto/ZDSYo2UFlNajA9RDA8gA4g/ms.jpg' :
-                    'http://lorempixel.com/400/200/?' + Math.floor((Math.random()*10000)+1);
+                    'http://lorempixel.com/400/200/food/?' + Math.floor((Math.random()*10000)+1);
             }
         });
         $scope.orderProp = 'age';
