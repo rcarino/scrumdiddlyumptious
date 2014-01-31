@@ -7,7 +7,7 @@
 }
 
 .restaurant-tags {
-    margin: 0;
+    margin: 0 0 20px;
     padding-left: 0;
 }
 
@@ -43,6 +43,21 @@
     font-size: 18px;
     padding: 5px;
     margin-left: 20px;
+}
+
+a[role='button'] {
+    display: block;
+    margin: 10px 0;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: red;
+    color: #FFF;
+    text-align: center;
+    border: 1px solid #FFF;
+}
+
+a[role='button']:hover {
+    background-color: darkred;
 }
 
 

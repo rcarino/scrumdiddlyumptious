@@ -1,8 +1,8 @@
-<a href="#/restaurants/">Back to restaurants</a>
+<a href="#/restaurants/">&lt; Back to restaurants</a>
 
 <div class="menu-body">
 
-<h1>Cafe Chaat</h1>
+<h1>{{restaurant.name}}</h1>
 
 <ul class="restaurant-tags">
     <li ng-repeat="tag in restaurant.cuisine">{{tag}}</li>
@@ -19,6 +19,8 @@
                     <div class="pull-right">
                         <span class="price">${{dish.price}}</span>
                         <input class="orderQuant"
+                               ng-model="orderData[dish.id]"
+                               ng-change="$emit('UpdateTotal')"
                                type="number"
                                inputmode="numeric"
                                value="0"
@@ -34,16 +36,16 @@
     </ul>
 </div>
 
-</div>
 
 <span>
-    Order Total: $63.48 <br>
-    Order: $52.99 <br>
-    Tax: $3.68 <br>
-    Tip: $8.95 <br>
+    Subtotal: ${{calculateSubtotal()}} <br>
+    Tax: ${{calculateTax()}} <br>
+    Tip: ${{calculateTip()}} <br>
+    <b>Order: ${{calculateTotal()}}</b> <br>
 </span>
 
-<h2>TODO: Total price & submit order is fake right now. Add link to modify current order</h2>
-<a href="#/submit-order" ng-click="confirmOrder()">Link to submit order</a> <br>
-<p>Link for friends to modify order</p>
-<p>http://scrum.diddlyumptio.us:8000/app/index.html#/share-order/32318/12351235</p>
+<a href="#/submit-order" ng-click="confirmOrder()" role="button">Submit order</a>
+
+<p><a href="http://scrum.diddlyumptio.us:8000/app/index.html#/share-order/32318/12351235">Link for friends to modify order</a></p>
+    
+</div>

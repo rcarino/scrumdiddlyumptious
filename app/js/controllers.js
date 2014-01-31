@@ -20,10 +20,80 @@ scrumdiddlyumptiousControllers.controller('RestaurantListCtrl', ['$scope', 'Rest
 
 scrumdiddlyumptiousControllers.controller('RestaurantMenuCtrl', ['$scope', '$routeParams', 'Restaurant', 'Order',
     function ($scope, $routeParams, Restaurant, Order) {
-        $scope.restaurant = Restaurant.get({restaurantId: $routeParams.restaurantId});
+
+
+        var orderData = {};
+        var prices = {};
+        var subtotal = 0;
+        var taxTotal = 0;
+        var tipTotal = 0;
+        var total = 0;
+
+        var initOrderData = function(restaurantData) {
+            for(var i = 0; i < restaurantData.menu.length; i++ ) {
+                var category =  restaurantData.menu[i];
+                for(var j = 0; j < category.children.length; j++) {
+                    var dish = category.children[j];
+
+                    orderData[dish.id] = 0;
+                    prices[dish.id] = dish.price;
+                }
+
+                $scope.orderData = orderData;
+            }
+        };
+
+        var calculateTax = function(value) {
+            return (value * 0.0925).toFixed(2);
+        };
+
+        $scope.restaurant = Restaurant.get({restaurantId: $routeParams.restaurantId}, function(data) {
+            initOrderData(data);
+        });
 
         $scope.confirmOrder = function () {
             $scope.order = Order.get();
+        };
+
+        $scope.$on('UpdateTotal'), function() {
+            var _subtotal = 0;
+            for (var key in orderData) {
+                if (orderData.hasOwnProperty(key)) {
+                    _subtotal += prices[key] * orderData[key];
+                }
+            }
+
+            subtotal = _subtotal.toFixed(2);
+            return _subtotal.toFixed(2);
+
+        };
+
+        $scope.calculateSubtotal = function() {
+            var _subtotal = 0;
+            for (var key in orderData) {
+                if (orderData.hasOwnProperty(key)) {
+                    _subtotal += prices[key] * orderData[key];
+                }
+            }
+
+            subtotal = _subtotal.toFixed(2);
+            return _subtotal.toFixed(2);
+
+        };
+
+        $scope.calculateTax = function() {
+            taxTotal = (0.0925 * subtotal).toFixed(2);
+            return taxTotal;
+        };
+
+        $scope.calculateTip = function() {
+            tipTotal = (0.175 * subtotal).toFixed(2);
+            return tipTotal;
+        }
+
+        $scope.calculateTotal = function() {
+            total = (parseFloat(subtotal) + parseFloat(tipTotal) + parseFloat(taxTotal)).toFixed(2);
+            return total;
         }
     }]);
 
