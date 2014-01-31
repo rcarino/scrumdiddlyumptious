@@ -76,6 +76,13 @@ a[role='button']:hover {
     background-color: darkred;
 }
 
+.technologies {
+    list-style: circle;
+    margin-left: 40px;
+    font-size: 18px;
+    line-height: 1.3em;
+}
+
 
 
 .pull-right {
