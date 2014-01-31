@@ -36,17 +36,15 @@
     </ul>
 </div>
 
-
 <div class="totals">
     <ul class="inline-list">
         <li>Subtotal: ${{calculateSubtotal()}}</li>
         <li>Tax (8.75%): ${{calculateTax()}}</li>
         <li>Tip (17%): ${{calculateTip()}}</li>
         <li><b>Order: ${{calculateTotal()}}</b></li>
+        <li><a href="#/submit-order" ng-click="confirmOrder()" role="button">Submit order</a></li>
     </ul>
 </div>
-
-<a href="#/submit-order" ng-click="confirmOrder()" role="button">Submit order</a>
 
 <p><a href="http://scrum.diddlyumptio.us:8000/app/index.html#/share-order/32318/12351235">Link for friends to modify order</a></p>
     
