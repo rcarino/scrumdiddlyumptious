@@ -24,3 +24,10 @@ scrumdiddlyumptiousServices.factory('Order', ['$resource',
             query: {method:'GET'}
         });
     }]);
+
+scrumdiddlyumptiousServices.factory('Charge', ['$resource',
+    function($resource){
+        return $resource('https://api.venmo.com/v1/payments', {}, {
+            query: {method:'POST', params:{restaurantId:'restaurants'}, isArray:true}
+        });
+    }]);

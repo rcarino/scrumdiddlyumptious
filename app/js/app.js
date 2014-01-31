@@ -34,6 +34,17 @@ scrumdiddlyumptiousApp.config(['$routeProvider',
             when('/submit-order', {
                 templateUrl: 'partials/submit-order.html'
             }).
+            when('/share-order/:restaurantId/:orderId', {
+                templateUrl: 'partials/share-order.html',
+                controller: 'RestaurantMenuCtrl'
+            }).
+            when('/submit-individual-order', {
+                templateUrl: 'partials/submit-individual-order.html'
+            }).
+            when('/charge/:userId', {
+                templateUrl: 'partials/charge.html',
+                controller: 'ChargeGroupCtrl'
+            }).
             otherwise({
                 redirectTo: '/find-restaurants'
             });
