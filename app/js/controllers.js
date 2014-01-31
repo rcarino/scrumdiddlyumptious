@@ -26,6 +26,7 @@ scrumdiddlyumptiousControllers.controller('RestaurantListCtrl', ['$scope', 'Rest
 scrumdiddlyumptiousControllers.controller('RestaurantMenuCtrl', ['$scope', '$routeParams', 'Restaurant', 'Order',
     function ($scope, $routeParams, Restaurant, Order) {
 
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
 
         var orderData = {};
         var prices = {};
