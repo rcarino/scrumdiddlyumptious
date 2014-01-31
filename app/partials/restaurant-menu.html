@@ -1,34 +1,37 @@
 <a href="#/restaurants/">Back to restaurants</a>
 
-<!-- TODO: Hardcoded -->
-<!-- restaurant -->
+<div class="menu-body">
+
 <h1>Cafe Chaat</h1>
 
-<h2>Tags</h2>
-<ul>
-    TODO: this is ugly as shit
+<ul class="restaurant-tags">
     <li ng-repeat="tag in restaurant.cuisine">{{tag}}</li>
 </ul>
 
 <div ng-repeat="category in restaurant.menu">
-
     <h2>{{ category.name }}</h2>
-
     <ul>
         <li>
             <ul>
                 <li class="dish" ng-repeat="dish in category.children">
-                    <div class="dish-title">
-                        <h3>{{dish.name}}</h3> <span class="dish-price">{{dish.price}}</span></h2>
+                    <span class="title">{{dish.name}}</span>
+
+                    <div class="pull-right">
+                        <span class="price">${{dish.price}}</span>
+                        <input class="orderQuant"
+                               type="number"
+                               inputmode="numeric"
+                               value="0"
+                               min="0"
+                               max="9"
+                               maxlength="1">
                     </div>
 
-                    <p>{{dish.descrip}}</p>
-                    Quantity: <input type="number" class="orderQuant">
+                    <p class="clearfix">{{dish.descrip}}</p>
                 </li>
             </ul>
         </li>
     </ul>
-
 </div>
 
 <span>
@@ -42,3 +45,5 @@
 <a href="#/submit-order" ng-click="confirmOrder()">Link to submit order</a> <br>
 <a href="/">Link for friends to modify order</a>
 <!--<span>{{restaurant.menu}}</span>-->
+
+</div>
