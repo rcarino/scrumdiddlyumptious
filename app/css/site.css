@@ -57,7 +57,7 @@ ul.inline-list li:after {
     width: 100%;
     background-color: #333;
 
-    padding: 20px 50px;
+    padding: 15px 50px;
     font-size: 18px;
     color: #F9F9F9;
 }
@@ -69,12 +69,11 @@ ul.inline-list li:after {
 a[role='button'] {
     display: block;
     margin: 10px 0;
-    padding: 5px 10px;
+    padding: 7px 20px;
     border-radius: 10px;
     background-color: red;
     color: #FFF;
     text-align: center;
-    border: 1px solid #FFF;
 }
 
 a[role='button']:hover {
