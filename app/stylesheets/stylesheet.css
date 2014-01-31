@@ -284,7 +284,7 @@ ul.inline-list li {
     display: inline-block;
 }
 
-ul.inline-list li.cost:after {
+ul.inline-list li:after {
     content: "/";
     display: inline-block;
     position: relative;

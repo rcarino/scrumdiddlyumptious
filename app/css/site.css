@@ -63,7 +63,7 @@ ul.restaurant-tags {
 }
 
 a[role='button'] {
-    display: block;
+    display: inline-block;
     margin: 10px 0;
     padding: 7px 20px;
     border-radius: 10px;
