@@ -105,7 +105,7 @@ scrumdiddlyumptiousControllers.controller('RestaurantMenuCtrl', ['$scope', '$rou
         $scope.mergeOrders = function() {
             var fries = $('.orderQuant').eq(0);
             var val = fries.val();
-            fries.val(parseInt(val) + 2);
+            fries.val(Math.min(9, parseInt(val) + 2));
             fries.trigger('input');
         }
     }]);
